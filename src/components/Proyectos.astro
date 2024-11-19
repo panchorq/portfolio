@@ -2,7 +2,7 @@
 import Html from "../icons/Tecnologias/Lenguajes/Html.astro";
 import Css from "../icons/Tecnologias/Lenguajes/Css.astro";
 import Js from "../icons/Tecnologias/Lenguajes/Js.astro";
-import React from "../icons/Tecnologias/Frameworks_Librerias/React.astro";
+import RubyOnRails from '../icons/Tecnologias/Lenguajes/RubyOnRails.astro';
 import Social_icons from "./Social_icons.astro";
 import Github from "../icons/Social/Github.astro";
 import Link from "../icons/Social/Link.astro";
@@ -23,35 +23,25 @@ const TAGS = {
     class: "bg-[#a39535] text-white",
     icon: Js,
   },
-  React: {
-    name: "React",
-    class: "bg-[#1c7777] text-white",
-    icon: React,
+  RubyOnRails: { 
+    name: "Ruby on Rails",
+    class: "bg-[#ff5c39] text-white",
+    icon: RubyOnRails,
   },
 };
 
 const PROJECTS = [
   {
-    title: "Empresa Ficticia - Pagina informativa",
-    description: "Trabajo final de la materia programacion II. Se utilizo Html, Css, JS y React. Tuvo funciones como ChatBot y un sistema de turnos",
-    link: "#",
-    github: "https://github.com/Pietro923/Programacion",
-    image: "/projects/proyecto1.webp",
-    tags: [TAGS.Html, TAGS.Css, TAGS.Js, TAGS.React],
-  },
-  {
-    title: "Aplicacion del Clima",
-    description: "Pagina creada con el objetivo de usar API del clima y probar su funcionamiento. Se utilizo Html, Css y JS",
-    link: "#",
-    github: "https://github.com/Pietro923/api-del-clima",
-    image: "/projects/proyecto2.webp",
-    tags: [TAGS.Html, TAGS.Css, TAGS.Js],
+    title: "Dataprop - Empresa de gestion inmobiliaria",
+    description: "Mi experiencia trabajando en una Start-Up de gestion inmobiliaria, desarrollando y manteniendo el sistema de gestion de propiedades.",
+    image: "/projects/dataprop.png",
+    tags: [TAGS.Html, TAGS.Css, TAGS.Js, TAGS.RubyOnRails],
   },
 ];
 ---
 
 <div class="flex flex-col gap-y-16">
-  {PROJECTS.map(({ image, title, description, tags, link, github }) => (
+  {PROJECTS.map(({ image, title, description, tags}) => (
     <article class="flex flex-col md:flex-row md:space-x-8 space-y-8 md:space-y-0">
       <div class="w-full md:w-1/2 flex items-center group">
         <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-hidden rounded-xl sm:rounded-xl lg:border lg:border-gray-800 group-hover:shadow-2xl">
@@ -75,21 +65,6 @@ const PROJECTS = [
         </div>
 
         <div class="mt-2 text-lg mb-4">{description}</div>
-
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <Social_icons href={github}>
-              <Github class="size-6" />
-              Code
-            </Social_icons>
-          )}
-          {link && (
-            <Social_icons href={link}>
-              <Link class="size-4" />
-              Preview
-            </Social_icons>
-          )}
-        </footer>
       </div>
     </article>
   ))}
